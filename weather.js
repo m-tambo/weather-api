@@ -1,6 +1,17 @@
 // introduce global variables
-let zipCode = $('#zipInput').value
+let zipCode = $('#zipInput')
 
+// event listener on enter key
+$('.container').keyup(function(e) {
+   if (e.originalEvent.code === "Enter") {
+      if (zipCode.val().length !== 5) {
+         alert ('Please enter valid Zip Code')
+      }
+      else {
+         getWeather()
+      }
+   }
+})
 
 // create an ajax call to open weather map
 function getWeather() {
