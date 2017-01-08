@@ -17,7 +17,7 @@ $('.container').keyup(function(e) {
 function getWeather() {
   return new Promise( function( resolve, reject ) {
     $.ajax({
-      url: `api.openweathermap.org/data/2.5/weather?zip=${zipCode},us`
+      url: `api.openweathermap.org/data/2.5/weather?zip=${zipCode.val()},us`
     })
     .done(function(data, textStatus, XHR){
       resolve(data)
