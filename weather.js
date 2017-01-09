@@ -2,8 +2,9 @@
 let zipCode = $('#zipInput')
 
 // event listener on enter key
-$('.container').keyup(function(e) {
-   if (e.originalEvent.code === "Enter") {
+$('form').submit(function(e) {
+   // if (e.originalEvent.code === "Enter") {
+     debugger
       if (zipCode.val().length !== 5) {
          alert ('Please enter valid Zip Code')
       }
@@ -17,7 +18,7 @@ $('.container').keyup(function(e) {
 function getWeather() {
   return new Promise( function( resolve, reject ) {
     $.ajax({
-      url: `api.openweathermap.org/data/2.5/weather?zip=${zipCode.val()},us`
+      url: `http://api.openweathermap.org/data/2.5/forecast/weather?zip=${zipCode.val()},us&appid=e4a97fbc7551aadfa69dbb29fd6ea3c8`
     })
     .done(function(data, textStatus, XHR){
       resolve(data)
