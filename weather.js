@@ -3,15 +3,10 @@ let zipCode = $('#zipInput')
 
 // event listener on enter key
 $('form').submit(function(e) {
-   // if (e.originalEvent.code === "Enter") {
-     debugger
-      if (zipCode.val().length !== 5) {
-         alert ('Please enter valid Zip Code')
-      }
-      else {
-         getWeather()
-      }
-   }
+  if ($('#zipInput').val().length === 5) {
+    getWeather()
+  }
+  e.preventDefault();
 })
 
 // create an ajax call to open weather map
