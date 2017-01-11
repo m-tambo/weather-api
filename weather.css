@@ -1,0 +1,13 @@
+body {
+   display: flex;
+}
+
+select, form {
+   /*display: block;*/
+   margin-top: 3%;
+   justify-content: center;
+}
+
+select {
+   font-size: 1.1em;
+}

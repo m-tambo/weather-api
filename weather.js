@@ -1,9 +1,10 @@
+
 // introduce global variables
 let zipCode = $('#zipInput')
 
 // event listener on enter key
 $('form').submit(function(e) {
-  if ($('#zipInput').val().length === 5) {
+  if ($('#zipInput').val()) {
     getWeather()
   }
   e.preventDefault();
